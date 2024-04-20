@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment X - Subject/Topic</title>
+	<title>Experiment 3 - Alternate Worlds</title>
 
 	<!-- Use UTF character set, a good idea with any webpage -->
 	<meta charset="UTF-8" />
@@ -23,20 +23,20 @@
 	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
     <script type="text/javascript" src="../js/site.js" DEFER></script>
 	<!-- Use me for a JavaScript OOP Project -->
-	<script type="text/javascript" src="./js/project.js" DEFER></script>
-	<!-- Use me for a p5.js project -->
-	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
+	<script type="text/javascript" src="./js/p2_base.js" DEFER></script>
+	<script type="text/javascript" src="./js/p2_solution.js" DEFER></script>
 </head>
 <body>
 	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
 	<main id="content">
 		<section>
 
-			<h1>Experiment X - Subject/Topic</h1>
+			<h1>Experiment 3 - Alternate Worlds</h1>
 
 			<div class="minor-section">
 				<div id="canvas-container">
 					<!-- canvas will be added here -->
+					<script src="p2_solution.js"></script>
 				</div>
                 <div class="fullscreen-box">
                     <button id="fullscreen">Fullscreen</button>
@@ -45,17 +45,37 @@
 
 			<div class="minor-section">
 				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
+				<p>For the dungeon generator, I tried to recreate one of the images I found on google.  The image was pretty simple so there 
+					was a lot to build off of.  I did my best to recreate the color scheme given the tilemap.
+				</p>
+				<p>For the overworld generator, I was trying to replicate something you would find in the game Stardew Valley. 
+					Since the tilemap looked pretty similar to something from that game, I decided to try my best to replicate a cliffside
+					 overlooking a river.
+				</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
+				<p>Dungeon Generator</p>
+				<p>The dungeon generator creates unique and intricate underground environments by using random generation.  Random generation 
+					is used for carving out rooms and connecting each and every one with corridors.  These corridors are carved out between 
+					adjacent rooms.  This process utilizes algorithms to ensure that rooms are strategically placed and interconnected.  I also 
+					used Math.random() functions to randomly generate artifacts within each dungeon room.
+				</p>
+				<p>Overworld Generator</p>
+				<p>The overworld generator constructs a landscape which generates a grid-like terrain.  Using generative techniques, different 
+					regions of the map are identified and populated with specific terrain features like trees or water bubbles.  These features 
+					are based on predefined rules and probabilities.  
+				</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
+				<p>I worked on this project by myself but had to rely on other classmates for help regarding the grid system that the tilemap 
+					used.  Overall, this experiment was pretty frustrating since I was trying to figure out how everything worked for hours. 
+					I also found it pretty frustrating how you had to guess each coordinate for each tile within the tilemap which led to 
+					mostly debugging and getting the correct placement on things.
+				</p>
 			</div>
 
 		</section>
