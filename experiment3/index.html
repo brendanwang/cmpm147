@@ -1,93 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment 3 - Alternate Worlds</title>
+    <!-- This title is used for tabs and bookmarks -->
+    <title>Experiment 3 - Alternate Worlds</title>
 
-	<!-- Use UTF character set, a good idea with any webpage -->
-	<meta charset="UTF-8" />
-	<!-- Set viewport so page remains consistently scaled w narrow devices -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Use UTF character set, a good idea with any webpage -->
+    <meta charset="UTF-8" />
+    <!-- Set viewport so page remains consistently scaled w narrow devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
-	<link rel="stylesheet" type="text/css" href="../css/site.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Include CSS file, including a site-wide CSS and for this particular page -->
+    <link rel="stylesheet" type="text/css" href="../css/site.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
-	<!-- Load jQuery library -->
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    <!-- Load jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
         crossorigin="anonymous"></script>
-	<!-- Load p5.js library -->
-	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+    <!-- Load p5.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
 
-	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
+    <!-- Link to javascript files - DEFER waits until all elements are rendered -->
     <script type="text/javascript" src="../js/site.js" DEFER></script>
-	<!-- Use me for a JavaScript OOP Project -->
-	<script type="text/javascript" src="./dungeon/dungeon_base.js" DEFER></script>
-	<script type="text/javascript" src="./dungeon/dungeon_solution.js" DEFER></script>
+    <!-- Use me for a JavaScript OOP Project -->
+    <script type="text/javascript" src="./dungeon/dungeon_base.js" DEFER></script>
+    <script type="text/javascript" src="./dungeon/dungeon_solution.js" DEFER></script>
 
-	<script type="text/javascript" src="./overworld/overworld_base.js" DEFER></script>
-	<script type="text/javascript" src="./overworld/overworld_solution.js" DEFER></script>
+    <script type="text/javascript" src="./overworld/overworld_base.js" DEFER></script>
+    <script type="text/javascript" src="./overworld/overworld_solution.js" DEFER></script>
+
+    <style>
+        /* Adjust canvas-container width based on button width */
+        .minor-section .canvas-container {
+            width: auto;
+            max-width: 50%; /* Limit the maximum width to 50% of the viewport */
+        }
+
+        /* Add some space between the buttons and the canvas */
+        .minor-section .canvas-container button {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
-	<main id="content">
-		<section>
+    <!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
+    <main id="content">
+        <section>
 
-			<h1>Experiment 3 - Alternate Worlds</h1>
+            <h1>Experiment 3 - Alternate Worlds</h1>
 
-			<div class="minor-section">
-				<div id="canvas-container">
-					<!-- canvas will be added here -->
-					<script src="./overworld/overworld_solution.js"></script>
-				</div>
-                <div class="fullscreen-box">
-                    <button id="fullscreen">Fullscreen</button>
+            <div class="minor-section">
+                <div class="canvas-container">
+                    <h2>Dungeon Generator</h2>
+                    <button onclick="window.location.href = './dungeon.html';">Go to Dungeon Generator</button>
+                    <!-- canvas will be added here -->
+                    <script src="./dungeon/dungeon_solution.js"></script>
                 </div>
-			</div>
+            </div>
 
-			<div class="minor-section">
-				<h2>Description</h2>
-				<p>For the dungeon generator, I tried to recreate one of the images I found on google.  The image was pretty simple so there 
-					was a lot to build off of.  I did my best to recreate the color scheme given the tilemap.
-				</p>
-				<p>For the overworld generator, I was trying to replicate something you would find in the game Stardew Valley. 
-					Since the tilemap looked pretty similar to something from that game, I decided to try my best to replicate a cliffside
-					 overlooking a river.
-				</p>
-			</div>
+            <div class="minor-section">
+                <div class="canvas-container">
+                    <h2>Overworld Generator</h2>
+                    <button onclick="window.location.href = './overworld.html';">Go to Overworld Generator</button>
+                    <!-- canvas will be added here -->
+                    <script src="./overworld/overworld_solution.js"></script>
+                </div>
+            </div>
 
-			<div class="minor-section">
-				<h2>Technical</h2>
-				<p>Dungeon Generator</p>
-				<p>The dungeon generator creates unique and intricate underground environments by using random generation.  Random generation 
-					is used for carving out rooms and connecting each and every one with corridors.  These corridors are carved out between 
-					adjacent rooms.  This process utilizes algorithms to ensure that rooms are strategically placed and interconnected.  I also 
-					used Math.random() functions to randomly generate artifacts within each dungeon room.
-				</p>
-				<p>Overworld Generator</p>
-				<p>The overworld generator constructs a landscape which generates a grid-like terrain.  Using generative techniques, different 
-					regions of the map are identified and populated with specific terrain features like trees or water bubbles.  These features 
-					are based on predefined rules and probabilities.  
-				</p>
-			</div>
+            <div class="minor-section">
+                <h2>Description</h2>
+                <p>For the dungeon generator, I tried to recreate one of the images I found on google.  The image was pretty simple so there 
+                    was a lot to build off of.  I did my best to recreate the color scheme given the tilemap.
+                </p>
+                <p>For the overworld generator, I was trying to replicate something you would find in the game Stardew Valley. 
+                    Since the tilemap looked pretty similar to something from that game, I decided to try my best to replicate a cliffside
+                     overlooking a river.
+                </p>
+            </div>
 
-			<div class="minor-section">
-				<h2>Reflection</h2>
-				<p>I worked on this project by myself but had to rely on other classmates for help regarding the grid system that the tilemap 
-					used.  Overall, this experiment was pretty frustrating since I was trying to figure out how everything worked for hours. 
-					I also found it pretty frustrating how you had to guess each coordinate for each tile within the tilemap which led to 
-					mostly debugging and getting the correct placement on things.
-				</p>
-			</div>
+            <div class="minor-section">
+                <h2>Technical</h2>
+                <p>Dungeon Generator</p>
+                <p>The dungeon generator creates unique and intricate underground environments by using random generation.  Random generation 
+                    is used for carving out rooms and connecting each and every one with corridors.  These corridors are carved out between 
+                    adjacent rooms.  This process utilizes algorithms to ensure that rooms are strategically placed and interconnected.  I also 
+                    used Math.random() functions to randomly generate artifacts within each dungeon room.
+                </p>
+                <p>Overworld Generator</p>
+                <p>The overworld generator constructs a landscape which generates a grid-like terrain.  Using generative techniques, different 
+                    regions of the map are identified and populated with specific terrain features like trees or water bubbles.  These features 
+                    are based on predefined rules and probabilities.  
+                </p>
+            </div>
 
-		</section>
-		<nav id="links" class="minor-section">
-			<!-- Put link back to homepage here. -->
+            <div class="minor-section">
+                <h2>Reflection</h2>
+                <p>I worked on this project by myself but had to rely on other classmates for help regarding the grid system that the tilemap 
+                    used.  Overall, this experiment was pretty frustrating since I was trying to figure out how everything worked for hours. 
+                    I also found it pretty frustrating how you had to guess each coordinate for each tile within the tilemap which led to 
+                    mostly debugging and getting the correct placement on things.  I also had a hard time getting both generators to display on 
+					the same page so I decided to create buttons that navigate you to each of the generators.  I was able to get one to display 
+					but as soon as I added the other generator, the new one would overwrite the first generator.
+                </p>
+            </div>
+
+        </section>
+        <nav id="links" class="minor-section">
+            <!-- Put link back to homepage here. -->
             <ul>
                 <li><a href="../index.html">Home</a></li>
             </ul>
-		</nav>
-	</main>
+        </nav>
+    </main>
 </body>
 </html>
