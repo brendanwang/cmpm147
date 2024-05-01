@@ -1,70 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment X - Subject/Topic</title>
+    <!-- This title is used for tabs and bookmarks -->
+    <title>Experiment 4 - Infinite Worlds</title>
 
-	<!-- Use UTF character set, a good idea with any webpage -->
-	<meta charset="UTF-8" />
-	<!-- Set viewport so page remains consistently scaled w narrow devices -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Use UTF character set, a good idea with any webpage -->
+    <meta charset="UTF-8" />
+    <!-- Set viewport so page remains consistently scaled w narrow devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
-	<link rel="stylesheet" type="text/css" href="../css/site.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Include CSS file, including a site-wide CSS and for this particular page -->
+    <link rel="stylesheet" type="text/css" href="../css/site.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
-	<!-- Load jQuery library -->
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    <!-- Load jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
         crossorigin="anonymous"></script>
-	<!-- Load p5.js library -->
-	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+    <!-- Load p5.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
 
-	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
+    <!-- Link to javascript files - DEFER waits until all elements are rendered -->
     <script type="text/javascript" src="../js/site.js" DEFER></script>
-	<!-- Use me for a JavaScript OOP Project -->
-	<script type="text/javascript" src="./js/project.js" DEFER></script>
-	<!-- Use me for a p5.js project -->
-	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
+    <!-- Use me for a JavaScript OOP Project -->
+
+    <style>
+        /* Adjust canvas-container width based on button width */
+        .minor-section .canvas-container {
+            width: auto;
+            max-width: 50%; /* Limit the maximum width to 50% of the viewport */
+        }
+
+        /* Add some space between the buttons and the canvas */
+        .minor-section .canvas-container button {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
-	<main id="content">
-		<section>
+    <!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
+    <main id="content">
+        <section>
 
-			<h1>Experiment X - Subject/Topic</h1>
+            <h1>Experiment 4 - Infinite Worlds</h1>
 
-			<div class="minor-section">
-				<div id="canvas-container">
-					<!-- canvas will be added here -->
-				</div>
-                <div class="fullscreen-box">
-                    <button id="fullscreen">Fullscreen</button>
+            <div class="minor-section">
+                <div class="canvas-container">
+                    <h2>Generator 1</h2>
+                    <button onclick="window.location.href = './generator1.html';">Go to First Generator</button>
                 </div>
-			</div>
+            </div>
 
-			<div class="minor-section">
-				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
-			</div>
+            <div class="minor-section">
+                <div class="canvas-container">
+                    <h2>Generator 2</h2>
+                    <button onclick="window.location.href = './generator2.html';">Go to Second Generator</button>
+                </div>
+            </div>
 
-			<div class="minor-section">
-				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
-			</div>
+            <div class="minor-section">
+                <div class="canvas-container">
+                    <h2>Generator 3</h2>
+                    <button onclick="window.location.href = './generator3.html';">Go to Third Generator</button>
+                </div>
+            </div>
 
-			<div class="minor-section">
-				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
-			</div>
+            <div class="minor-section">
+                <h2>Description</h2>
+                <p>In my first generator, I wanted to create a housing simulator for UCSC.  The canvas is supposed to be the UCSC campus with the trees.  
+                    As you click around the canvas, you spawn in more housing.
+                </p>
+                <p>In my second generator, I used my first generator as a template to create an igloo map inspired by Club Penguin.  As you click around 
+                    the canvas, you spawn penguins.
+                </p>
+                <p>In my third generator, I wanted to switch things up.  I was inspired by the Dune movie sandworm that swallowed the spice collector.  
+                    I created a sandy environment and added an animation that makes the adjacent tiles to the clicked tile animate in a wave motion.
+                </p>
+            </div>
 
-		</section>
-		<nav id="links" class="minor-section">
-			<!-- Put link back to homepage here. -->
+            <div class="minor-section">
+                <h2>Technical</h2>
+                <p>Generator 1</p>
+                <p>This code defines a simple tile-based environment where each tile represents different elements, such as trees, houses, and empty space.  
+                    The code handles tile clicking.  When a tile is clicked, houses are spawned not only on the clicked tile but also its neighboring tiles.  
+                    This is achieved by iterating over predefined offsets representing the neighboring tiles and assigning a random number of houses to each one.
+                </p>
+                <p>Generator 2</p>
+                <p>This code is almost identical to the first generators code but is has a different color scheme as well as shapes for the randomly generated 
+                    buildings across the canvas.  I opted to go with an ice theme by changing the rgb values of the tiles as well as creating new shapes for both 
+                    the buildings and spawns that are generated upon each click. 
+                </p>
+                <p>Generator 3</p>
+                <p>This code creates a visually dynamic tile-based environment where tiles display different colors and respond to user interaction by undergoing 
+                    a wave-like animation when clicked.  The environment's appearance is determined by a combination of predefined colors, animation logic, and 
+                    random generation based on the world seed.
+                </p>
+            </div>
+
+            <div class="minor-section">
+                <h2>Reflection</h2>
+                <p>I worked on this experiment alone so I contributed to everything by myself.  One high point of the project was that it was pretty easy to get started on this project as compared to Experiment 3.  The instructions seemed pretty straightforward on how to create an infinite world generator.  However there were quite a few low points to the project.  I found it pretty difficult to load a tile map from the internet into glitch.com.  I’m pretty sure I was implementing the preload function incorrectly but I couldn’t seem to figure this part out.  And if I ever did get the tile map to load, another challenge would be drawing the actual tiles in the generator since I would probably have to figure out the coordinates of the tiles in the tile map.  Another low to the project was transferring everything from glitch.com to my portfolio website again.  It seems like there is a trend of me having a difficult time transferring everything from glitch to the portfolio.  It’s not always a straightforward task and requires me to do a lot of tinkering just to get it to display correctly on the page.  Sometimes, I find this incredibly frustrating since I just want to turn in my assignment without wasting more time tinkering around since I have the link to the working generator(s) on glitch.com.
+                </p>
+            </div>
+
+        </section>
+        <nav id="links" class="minor-section">
+            <!-- Put link back to homepage here. -->
             <ul>
                 <li><a href="../index.html">Home</a></li>
             </ul>
-		</nav>
-	</main>
+        </nav>
+    </main>
 </body>
 </html>
